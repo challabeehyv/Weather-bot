@@ -1,0 +1,48 @@
+action_factory: null
+action_names:
+- utter_greeting
+- utter_how_i_am
+- utter_bye
+- utter_its_nice_to_meet_you
+- action_get_weather
+actions:
+- utter_greeting
+- utter_how_i_am
+- utter_bye
+- utter_its_nice_to_meet_you
+- actions.weather.ActionGetWeather
+config:
+  store_entities_as_slots: true
+entities: []
+intents:
+- greeting
+- how_are_you
+- bye
+- my_name_is
+- get_weather
+slots:
+  GPE:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  PERSON:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_bye:
+  - text: Bye.
+  - text: Good bye.
+  utter_default:
+  - text: Per aspera ad astra.
+  utter_greeting:
+  - text: Hi!
+  - text: Hello!
+  - text: Hello, my friend.
+  - text: Hello there, my friend.
+  utter_how_i_am:
+  - text: I am doing ok.
+  - text: I am good.
+  - text: I am doing good.
+  utter_its_nice_to_meet_you:
+  - text: It's nice to meet you, {PERSON}.
+  - text: Nice to meet you, {PERSON}.
+topics: []
